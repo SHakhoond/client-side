@@ -1,18 +1,22 @@
 var xhr = require('xhr')
-var newPage = require('./views/greeting.hbs')
+var newPage = require('./views/res2bandle.hbs')
 
-var api = 'https://api.wheretheiss.at/v1/satellites/25544/tles'
+var data = {
+  url: '192.168.1.246:3000/v1/teams',
+  useXDR: true,
+  method: 'GET'
+}
 // console.log(endpoint)
 
-xhr.get(api, function (err, data) {
+xhr(data, function (err, data) {
   if (err) {
     console.error(err)
   }
 
   // In case you're curious
-  console.log(JSON.parse(data.body)) // FYI: data.body is a string
+  console.log(data) // FYI: data.body is a string
 
   // Replace 'Space' below with the response
   
-  document.body.innerHTML = newPage({name: 'Space'})
+  document.body.innerHTML = newPage({teams: 'data'})
 })
