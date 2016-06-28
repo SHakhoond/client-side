@@ -1,5 +1,5 @@
 var xhr = require('xhr')
-var newPage = require('./views/res2bandle.hbs')
+var newPage = require('./views/res2bundle.hbs')
 
 var data = {
   url: '192.168.1.246:3000/v1/teams',
